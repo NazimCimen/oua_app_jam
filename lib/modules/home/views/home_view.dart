@@ -32,6 +32,14 @@ class HomeView extends StatelessWidget {
                 padding: context.paddingAllLow,
                 height: context.dynamicHeight(0.2),
                 decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                     color: AppColors.appBlueColor,
                     borderRadius: BorderRadius.circular(15)),
                 child: Column(
@@ -134,6 +142,14 @@ class HomeView extends StatelessWidget {
     return Container(
       padding: context.paddingAllMedium,
       decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 3,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
           color: AppColors.appBlueColor,
           borderRadius: BorderRadius.circular(15)),
       child: Column(
