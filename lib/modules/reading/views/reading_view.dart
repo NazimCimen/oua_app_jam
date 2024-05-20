@@ -7,7 +7,7 @@ class ReadingPageScience extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Reading"),
+        title: const Text("Reading."),
         backgroundColor: Color(0xff6f8ed7),
       ),
       body: SingleChildScrollView(
