@@ -23,165 +23,162 @@ class HomeView extends StatelessWidget {
                 height: context.dynamicHeight(0.25),
                 width: double.infinity,
                 child: buildAppBar(context)),
-            /*   Text(
-              'Lets Begin Studying',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge
-                  ?.copyWith(color: Colors.black),
-            ),*/
             Padding(
               padding: context.paddingAllMedium,
-              child: Container(
-                width: double.infinity,
-                padding: context.paddingAllLow,
-                height: context.dynamicHeight(0.2),
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 3,
-                        blurRadius: 7,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                    color: AppColors.appBlueColor,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Your Vocabulary   ',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                            ),
-                            Text(
-                              'Save your vocabulary         \nand test yourself',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        Image.asset(
-                          'assets/images/vocabulary_img.png',
-                          height: context.dynamicHeight(0.11),
-                        ),
-                      ],
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.appBlueLightColor,
-                            shape: ContinuousRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            fixedSize: Size(context.dynamicWidht(0.75),
-                                context.dynamicHeight(0.05))),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AddWordsPage(),
-                              ));
-                        },
-                        child: Text(
-                          'Go to your vocabulary',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(color: Colors.white),
-                        ))
-                  ],
-                ),
-              ),
+              child: buildVocabularyArea(context),
             ),
             Padding(
               padding: context.paddingAllLow,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      buildStudyingCard(
-                        context: context,
-                        text: '  Listening',
-                        imagePath: 'assets/images/listening_img2.png',
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
-                              ));
-                        },
-                      ),
-                      SizedBox(
-                        width: context.dynamicWidht(0.035),
-                      ),
-                      buildStudyingCard(
-                        context: context,
-                        text: '  Speaking',
-                        imagePath: 'assets/images/speaking_img2.png',
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
-                              ));
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.dynamicHeight(0.025),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      buildStudyingCard(
-                        context: context,
-                        text: '  Writing',
-                        imagePath: 'assets/images/writing_img.png',
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
-                              ));
-                        },
-                      ),
-                      SizedBox(
-                        width: context.dynamicWidht(0.035),
-                      ),
-                      buildStudyingCard(
-                        context: context,
-                        text: '  Reading',
-                        imagePath: 'assets/images/reading_img.png',
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
-                              ));
-                        },
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              child: buildStudyindCardsArea(context),
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Column buildStudyindCardsArea(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            buildStudyingCard(
+              context: context,
+              text: '  Listening',
+              imagePath: 'assets/images/listening_img2.png',
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadingPageScience(),
+                    ));
+              },
+            ),
+            SizedBox(
+              width: context.dynamicWidht(0.035),
+            ),
+            buildStudyingCard(
+              context: context,
+              text: '  Speaking',
+              imagePath: 'assets/images/speaking_img2.png',
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadingPageScience(),
+                    ));
+              },
+            ),
+          ],
+        ),
+        SizedBox(
+          height: context.dynamicHeight(0.025),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            buildStudyingCard(
+              context: context,
+              text: '  Writing',
+              imagePath: 'assets/images/writing_img.png',
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadingPageScience(),
+                    ));
+              },
+            ),
+            SizedBox(
+              width: context.dynamicWidht(0.035),
+            ),
+            buildStudyingCard(
+              context: context,
+              text: '  Reading',
+              imagePath: 'assets/images/reading_img.png',
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadingPageScience(),
+                    ));
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Container buildVocabularyArea(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: context.paddingAllLow,
+      height: context.dynamicHeight(0.2),
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 3,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          color: AppColors.appBlueColor,
+          borderRadius: BorderRadius.circular(15)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Your Vocabulary   ',
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                  Text(
+                    'Save your vocabulary         \nand test yourself',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: Colors.white),
+                  ),
+                ],
+              ),
+              Image.asset(
+                'assets/images/vocabulary_img.png',
+                height: context.dynamicHeight(0.11),
+              ),
+            ],
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.appBlueLightColor,
+                  shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  fixedSize: Size(
+                      context.dynamicWidht(0.75), context.dynamicHeight(0.05))),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddWordsPage(),
+                    ));
+              },
+              child: Text(
+                'Go to your vocabulary',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium
+                    ?.copyWith(color: Colors.white),
+              ))
+        ],
       ),
     );
   }
