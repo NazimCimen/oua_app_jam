@@ -39,6 +39,15 @@ dependencies:
   dio: ^5.4.3+1
   provider: ^6.1.2
   google_fonts: ^6.2.1
+  firebase_core: ^2.31.0
+  firebase_auth: ^4.19.5
+  cloud_firestore: ^4.17.3
+  google_ml_kit:  ^0.7.3
+  image_picker: ^1.1.1
+  translator: ^1.0.0
+  flutter_tts: ^4.0.2
+  fluttertoast: ^8.2.5
+  uuid: ^4.4.0
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,10 @@
+import 'package:appjam/modules/add_words/views/add_words.dart';
+import 'package:appjam/modules/reading/views/reading_view.dart';
+import 'package:appjam/modules/translation/views/translation_view.dart';
 import 'package:appjam/utils/constants/app_colors.dart';
 import 'package:appjam/utils/extensions/size_extensions.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -57,11 +62,16 @@ class HomeView extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge
-                                  ?.copyWith(fontWeight: FontWeight.bold),
+                                  ?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
                             ),
                             Text(
                               'Save your vocabulary         \nand test yourself',
-                              style: Theme.of(context).textTheme.bodyMedium,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(color: Colors.white),
                             ),
                           ],
                         ),
@@ -78,10 +88,19 @@ class HomeView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(15)),
                             fixedSize: Size(context.dynamicWidht(0.75),
                                 context.dynamicHeight(0.05))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AddWordsPage(),
+                              ));
+                        },
                         child: Text(
                           'Go to your vocabulary',
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(color: Colors.white),
                         ))
                   ],
                 ),
@@ -95,16 +114,32 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       buildStudyingCard(
-                          context: context,
-                          text: '  Listening',
-                          imagePath: 'assets/images/listening_img2.png'),
+                        context: context,
+                        text: '  Listening',
+                        imagePath: 'assets/images/listening_img2.png',
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReadingPageScience(),
+                              ));
+                        },
+                      ),
                       SizedBox(
                         width: context.dynamicWidht(0.035),
                       ),
                       buildStudyingCard(
-                          context: context,
-                          text: '  Speaking',
-                          imagePath: 'assets/images/speaking_img2.png'),
+                        context: context,
+                        text: '  Speaking',
+                        imagePath: 'assets/images/speaking_img2.png',
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReadingPageScience(),
+                              ));
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -114,16 +149,32 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       buildStudyingCard(
-                          context: context,
-                          text: '  Writing',
-                          imagePath: 'assets/images/writing_img.png'),
+                        context: context,
+                        text: '  Writing',
+                        imagePath: 'assets/images/writing_img.png',
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReadingPageScience(),
+                              ));
+                        },
+                      ),
                       SizedBox(
                         width: context.dynamicWidht(0.035),
                       ),
                       buildStudyingCard(
-                          context: context,
-                          text: '  Reading',
-                          imagePath: 'assets/images/reading_img.png'),
+                        context: context,
+                        text: '  Reading',
+                        imagePath: 'assets/images/reading_img.png',
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReadingPageScience(),
+                              ));
+                        },
+                      ),
                     ],
                   ),
                 ],
@@ -138,28 +189,36 @@ class HomeView extends StatelessWidget {
   Widget buildStudyingCard(
       {required String text,
       required BuildContext context,
-      required String imagePath}) {
-    return Container(
-      padding: context.paddingAllMedium,
-      decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
+      required String imagePath,
+      required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: context.paddingAllMedium,
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: Offset(0, 3),
+              ),
+            ],
+            color: AppColors.appBlueColor,
+            borderRadius: BorderRadius.circular(15)),
+        child: Column(
+          children: [
+            Image.asset(
+              imagePath,
+              width: context.dynamicWidht(0.35),
             ),
+            Text(text,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: Colors.white))
           ],
-          color: AppColors.appBlueColor,
-          borderRadius: BorderRadius.circular(15)),
-      child: Column(
-        children: [
-          Image.asset(
-            imagePath,
-            width: context.dynamicWidht(0.35),
-          ),
-          Text(text, style: Theme.of(context).textTheme.titleMedium)
-        ],
+        ),
       ),
     );
   }
@@ -179,9 +238,18 @@ class HomeView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/images/avatar.png'),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MLKitTranslationPage(),
+                        ));
+                  },
+                  child: const CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/avatar.png'),
+                  ),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -189,11 +257,17 @@ class HomeView extends StatelessWidget {
                   children: [
                     Text(
                       '  Hey Alex',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(color: Colors.white),
                     ),
                     Text(
                       '  Ready to practice English today?',
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: Colors.white),
                     )
                   ],
                 )
