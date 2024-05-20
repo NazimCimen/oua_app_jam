@@ -1,12 +1,15 @@
 import 'package:appjam/modules/add_words/views/add_words.dart';
 import 'package:appjam/modules/reading/views/reading_view.dart';
 import 'package:appjam/modules/translation/views/translation_view.dart';
+import 'package:appjam/modules/writing/views/writing_page.dart';
 import 'package:appjam/utils/constants/app_colors.dart';
 import 'package:appjam/utils/extensions/size_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../listening/views/listening_page.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -121,7 +124,7 @@ class HomeView extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
+                                builder: (context) => ListeningPage(),
                               ));
                         },
                       ),
@@ -156,7 +159,7 @@ class HomeView extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
+                                builder: (context) => WritingPage(),
                               ));
                         },
                       ),
