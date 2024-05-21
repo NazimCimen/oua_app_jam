@@ -28,13 +28,7 @@ class HomeView extends StatelessWidget {
                 height: context.dynamicHeight(0.25),
                 width: double.infinity,
                 child: buildAppBar(context)),
-            /*   Text(
-              'Lets Begin Studying',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge
-                  ?.copyWith(color: Colors.black),
-            ),*/
+         
             Padding(
               padding: context.paddingAllMedium,
               child: Container(
