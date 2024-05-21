@@ -101,6 +101,7 @@ class _AddWordsPageState extends State<AddWordsPage> {
                 //     buttonText: 'SAVE WORD',
                 //     buttonIcon:
                 onPressed: () {
+
                   addFirestoreWords().then((value) => {});
                 })
           ],

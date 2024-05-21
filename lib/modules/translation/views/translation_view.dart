@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:appjam/modules/translation/views/translation_result_view.dart';
+import 'package:appjam/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 //import 'package:google_translate/google_translate.dart';
@@ -45,7 +46,8 @@ class _MyHomePageState extends State<MLKitTranslationPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Text Recognition example"),
+        title: const Text("Text Recognition Translator"),
+        backgroundColor: AppColors.appBlueLightColor,
       ),
       body: Center(
           child: SingleChildScrollView(

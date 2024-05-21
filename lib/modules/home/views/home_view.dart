@@ -1,5 +1,5 @@
-import 'package:appjam/modules/add_words/views/add_words.dart';
-import 'package:appjam/modules/reading/views/reading_view.dart';
+import 'package:appjam/modules/my_words/views/add_words.dart';
+import 'package:appjam/modules/my_words/views/my_words.dart';
 import 'package:appjam/modules/translation/views/translation_view.dart';
 import 'package:appjam/modules/writing/views/writing_page.dart';
 import 'package:appjam/utils/constants/app_colors.dart';
@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../listening/views/listening_page.dart';
+import '../../reading/views/reading_history_view.dart';
+import '../../reading/views/reading_science_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -95,7 +97,7 @@ class HomeView extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AddWordsPage(),
+                                builder: (context) => MyWords(),
                               ));
                         },
                         child: Text(
@@ -133,13 +135,13 @@ class HomeView extends StatelessWidget {
                       ),
                       buildStudyingCard(
                         context: context,
-                        text: '  Speaking',
-                        imagePath: 'assets/images/speaking_img2.png',
+                        text: 'Image translate',
+                        imagePath: 'assets/images/services.png',
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReadingPageScience(),
+                                builder: (context) => MLKitTranslationPage(),
                               ));
                         },
                       ),

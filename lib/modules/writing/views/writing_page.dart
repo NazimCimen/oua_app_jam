@@ -28,7 +28,7 @@ class _WritingPageState extends State<WritingPage> {
     wordEn = [];
     wordTr = [];
     final CollectionReference myCollection =
-    FirebaseFirestore.instance.collection('koleksiyon adi');
+    FirebaseFirestore.instance.collection('flutter66database');
     QuerySnapshot querySnapshot =
     await myCollection.get();
     for (var doc in querySnapshot.docs) {

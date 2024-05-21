@@ -23,7 +23,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
         ),
         toolbarHeight: 170,
-        backgroundColor: Color(0xffe3f6f6),
+        backgroundColor: Color(0xff90b0ff),
         title: Padding(
             padding: EdgeInsets.all(120),
             child: Image.asset('assets/images/padlock.png', fit: BoxFit.fill)),

@@ -1,3 +1,4 @@
+import 'package:appjam/utils/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:translator/translator.dart';
 
@@ -37,6 +38,7 @@ class _TranslationScreenState extends State<TranslationResultPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Çeviri'),
+        backgroundColor: AppColors.appBlueLightColor,
       ),
       body: FutureBuilder<Translation>(
         future: _translationFuture,
